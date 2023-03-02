@@ -15,6 +15,32 @@ public class PessoaBean {
 	
 	private String nome;
 	
+	private String senha;
+	
+	private String texto;
+	
+	
+	
+	public String getSenha() {
+		return senha;
+	}
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+
+	public String getTexto() {
+		return texto;
+	}
+
+
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
+
+
 	private HtmlCommandButton commandButton;
 	
 
@@ -31,11 +57,14 @@ public class PessoaBean {
 
 	private List<String> nomes = new ArrayList<String>();
 	
+	
+	
 	public String addNome() {
 		nomes.add(nome);
 		
 		if(nomes.size()>3) {
 			commandButton.setDisabled(true);
+			return "paginanavegada?faces-redirect=true";
 		}
 		
 		return "";
